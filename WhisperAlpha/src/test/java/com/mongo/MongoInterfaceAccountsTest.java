@@ -73,14 +73,14 @@ public class MongoInterfaceAccountsTest {
     
     @Test
     public void UserTypeIsCorrect() {
-        assertEquals(testUserType, mongoInterfaceAccounts.getUserData(testName).get("userType"));
+        assertEquals(testUserType, mongoInterfaceAccounts.getUserData(testName).get(MongoInterfaceAccounts.FIELD_USERTYPE));
     }
     
     @Test
     public void ChangingUserTypeWorks() {
         testUserType = 1;
         mongoInterfaceAccounts.changeUserType(testName, testUserType);
-        assertEquals(testUserType, mongoInterfaceAccounts.getUserData(testName).get("userType"));
+        assertEquals(testUserType, mongoInterfaceAccounts.getUserData(testName).get(MongoInterfaceAccounts.FIELD_USERTYPE));
     }
     
     @Test

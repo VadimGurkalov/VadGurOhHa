@@ -4,6 +4,7 @@
  */
 package com.userAccounts;
 import com.mongo.MongoInterfaceAccounts;
+import java.util.Map;
 /**
  *
  * @author Vadim
@@ -18,7 +19,9 @@ public class AccountTools {
     public User authenticate(String username, String password) throws Exception {
         if (this.mongoInterfaceAccounts.UserNameExists(username)) {
             if (Password.check(password, this.mongoInterfaceAccounts.getHash(username))){
-                return new User(username, UserType.values()[this.mongoInterfaceAccounts.getUserData()]);
+                Map<String, Object> userData = this.mongoInterfaceAccounts.getUserData(username);
+                int userType = Integer.parseInt(userData.get(MongoInterfaceAccounts.FIELD_USERTYPE).toString());
+                return new User(username, UserType.values()[userType]);
             }
         }
         throw new IllegalArgumentException("The username or password is incorrect");
