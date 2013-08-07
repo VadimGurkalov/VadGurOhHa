@@ -18,7 +18,7 @@ public class AccountTools {
     public User authenticate(String username, String password) throws Exception {
         if (this.mongoInterfaceAccounts.UserNameExists(username)) {
             if (Password.check(password, this.mongoInterfaceAccounts.getHash(username))){
-                return new User(username, UserType.values()[this.mongoInterfaceAccounts.getUserType()]);
+                return new User(username, UserType.values()[this.mongoInterfaceAccounts.getUserData()]);
             }
         }
         throw new IllegalArgumentException("The username or password is incorrect");

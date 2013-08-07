@@ -11,6 +11,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import java.net.UnknownHostException;
+import java.util.Map;
 
 /**
  *
@@ -33,7 +34,7 @@ public class MongoInterface {
     public DB getDataBase() {
         return dataBase;
     }
-    public DBCursor findSingleField (String field, String matching, DBCollection collection) {
+    public DBCursor getCursorFromSingleField (String field, Object matching, DBCollection collection) {
         BasicDBObject query = new BasicDBObject();
         query.put(field, matching);
         return collection.find(query);
@@ -41,7 +42,17 @@ public class MongoInterface {
     public DBObject getNext (DBCursor cursor) {
         return cursor.next();
     }
+    public void addNewMapToCollection(Map<String, Object> map, DBCollection collection) throws Exception {
+        collection.insert(new BasicDBObject(map));
+    }
+    public void updateEntriesInCollection(Map<String, Object> query, Map<String, Object> data, DBCollection collection) {
+        collection.update(new BasicDBObject(query), new BasicDBObject("$set", new BasicDBObject(data)));
+    }
     
+    public void deleteEntryInCollection(Map<String, Object> query, DBCollection collection) {
+        BasicDBObject bdbo = new BasicDBObject(query);
+        collection.remove(bdbo);
+    }
  //   public List<List<String>> getTablesAsList(String tableName) {
 //    }
 }

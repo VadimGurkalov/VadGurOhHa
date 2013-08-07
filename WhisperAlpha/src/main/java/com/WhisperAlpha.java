@@ -19,11 +19,18 @@ public class WhisperAlpha {
         MongoInterfaceAccounts testAccounts;
         testAccounts = new MongoInterfaceAccounts();
         AccountTools tools = new AccountTools();
-        System.out.println(testAccounts.getHash("tester"));
+        String testName;
+        String spookName;
+        String testHash;
+        int testUserType;
+        
         try {
-//            System.out.println(tools.addGuest(new User("tester", UserType.GUEST), "swordfish"));
-            tools.registerUserAsAdmin(tools.authenticate("tester", "swordfish"));
-            System.out.println(tools.authenticate("tester", "swordfish"));
+            testName = "User";
+            testHash = "swordfish"; //It's always swordfish
+            spookName = "spook";
+            testUserType = 0;
+            testAccounts.addNewUserToCollection(testName, testHash, testUserType);
+            testAccounts.removeUser(testName);
         } catch (Exception e) {
             System.out.println(e);
         }

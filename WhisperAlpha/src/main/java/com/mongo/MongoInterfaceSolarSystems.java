@@ -8,6 +8,6 @@ package com.mongo;
  *
  * @author Vadim
  */
-public class MongoInterFaceSolarSystems {
+public class MongoInterfaceSolarSystems {
     
 }

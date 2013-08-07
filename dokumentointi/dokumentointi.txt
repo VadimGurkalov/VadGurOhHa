@@ -1,1 +1,1 @@
-luokka- ja sekvenssikaaviot png tai jpg muodossa
+ClassDiagram1 - M‰‰rittelyvaiheen luokkakaavio
