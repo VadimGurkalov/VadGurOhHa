@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.092" errors="0" skipped="0" tests="7" name="com.mongo.MongoInterfaceTest">
+<testsuite failures="0" time="0.227" errors="0" skipped="0" tests="7" name="com.mongo.MongoInterfaceTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_07\jre\bin"/>
@@ -62,11 +62,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.033" classname="com.mongo.MongoInterfaceTest" name="connectsToRightDataBase"/>
-  <testcase time="0.005" classname="com.mongo.MongoInterfaceTest" name="changeEntrySuccessfully"/>
-  <testcase time="0" classname="com.mongo.MongoInterfaceTest" name="deleteExistingEntryWithMultipleFieldsSuccessfully"/>
-  <testcase time="0.006" classname="com.mongo.MongoInterfaceTest" name="addsNewSingleFieldEntrySuccessfully"/>
-  <testcase time="0.009" classname="com.mongo.MongoInterfaceTest" name="addsNewMultipleFieldEntrySuccessfully"/>
-  <testcase time="0.006" classname="com.mongo.MongoInterfaceTest" name="shouldNotLetAddEntryWithSameIdField"/>
-  <testcase time="0.007" classname="com.mongo.MongoInterfaceTest" name="deleteExistingEntrySuccessfully"/>
+  <testcase time="0.072" classname="com.mongo.MongoInterfaceTest" name="addsNewSingleFieldEntrySuccessfully"/>
+  <testcase time="0.017" classname="com.mongo.MongoInterfaceTest" name="addsNewMultipleFieldEntrySuccessfully"/>
+  <testcase time="0.008" classname="com.mongo.MongoInterfaceTest" name="shouldNotLetAddEntryWithSameIdField"/>
+  <testcase time="0.014" classname="com.mongo.MongoInterfaceTest" name="deleteExistingEntrySuccessfully"/>
+  <testcase time="0.009" classname="com.mongo.MongoInterfaceTest" name="deleteExistingEntryWithMultipleFieldsSuccessfully"/>
+  <testcase time="0.007" classname="com.mongo.MongoInterfaceTest" name="connectsToRightDataBase"/>
+  <testcase time="0.033" classname="com.mongo.MongoInterfaceTest" name="changeEntrySuccessfully"/>
 </testsuite>

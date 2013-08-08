@@ -29,8 +29,6 @@ public class WhisperAlpha {
             testHash = "swordfish"; //It's always swordfish
             spookName = "spook";
             testUserType = 0;
-            testAccounts.addNewUserToCollection(testName, testHash, testUserType);
-            testAccounts.removeUser(testName);
         } catch (Exception e) {
             System.out.println(e);
         }

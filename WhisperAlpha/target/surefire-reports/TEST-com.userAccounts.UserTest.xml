@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.555" errors="0" skipped="0" tests="11" name="com.mongo.MongoInterfaceAccountsTest">
+<testsuite failures="0" time="0.004" errors="0" skipped="0" tests="9" name="com.userAccounts.UserTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_07\jre\bin"/>
@@ -62,15 +62,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.051" classname="com.mongo.MongoInterfaceAccountsTest" name="ChangingNotexistantHashCausesException"/>
-  <testcase time="0.006" classname="com.mongo.MongoInterfaceAccountsTest" name="NotexistantUsernameIsNotExistant"/>
-  <testcase time="0.004" classname="com.mongo.MongoInterfaceAccountsTest" name="DatabaseIsCorrect"/>
-  <testcase time="0.004" classname="com.mongo.MongoInterfaceAccountsTest" name="CollectionIsCorrect"/>
-  <testcase time="0.004" classname="com.mongo.MongoInterfaceAccountsTest" name="AddingNewUserWorks"/>
-  <testcase time="0.006" classname="com.mongo.MongoInterfaceAccountsTest" name="PasswordIsCorrect"/>
-  <testcase time="0.005" classname="com.mongo.MongoInterfaceAccountsTest" name="UserTypeIsCorrect"/>
-  <testcase time="0.006" classname="com.mongo.MongoInterfaceAccountsTest" name="ChangingUserTypeWorks"/>
-  <testcase time="0.007" classname="com.mongo.MongoInterfaceAccountsTest" name="ChangingHashWorks"/>
-  <testcase time="0.005" classname="com.mongo.MongoInterfaceAccountsTest" name="ChangingNotexistantUsertypeCausesException"/>
-  <testcase time="0.005" classname="com.mongo.MongoInterfaceAccountsTest" name="AddingSameUsernameCausesException"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="guestUserTypeReturnsCorrectly"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="adminUserTypeReturnsCorrectly"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="daemonToStringWorksAsIntended"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="weHaveDaemonInfestationHereBetterCallExterminator"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="userNameReturnsCorrectly"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="userUserTypeReturnsCorrectly"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="guestToStringWorksAsIntended"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="userToStringWorksAsIntended"/>
+  <testcase time="0" classname="com.userAccounts.UserTest" name="adminToStringWorksAsIntended"/>
 </testsuite>

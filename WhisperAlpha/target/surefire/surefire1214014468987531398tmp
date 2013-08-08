@@ -1,0 +1,6 @@
+#surefire
+#Thu Aug 08 16:21:17 EEST 2013
+user.dir=C\:\\Users\\Vadim\\Documents\\GitHub\\VadGurOhHa\\WhisperAlpha
+localRepository=C\:\\Users\\Vadim\\.m2\\repository
+basedir=C\:\\Users\\Vadim\\Documents\\GitHub\\VadGurOhHa\\WhisperAlpha
+test=com.userAccounts.PasswordTest

@@ -8,6 +8,6 @@ package com.mongo;
  *
  * @author Vadim
  */
-public class MongoInterfaceKillmails {
+public class MongoInterfaceSolarsystems {
     
 }

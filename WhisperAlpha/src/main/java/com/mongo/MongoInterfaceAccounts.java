@@ -16,6 +16,7 @@ import java.util.Map;
  * @author Vadim
  */
 public class MongoInterfaceAccounts extends MongoInterface {
+
     private static final String NAME_DATABASE = "UserAccounts";
     private static final String NAME_COLLECTION = "useraccounts";
     public static final String FIELD_USERNAME = "userName";
@@ -23,35 +24,35 @@ public class MongoInterfaceAccounts extends MongoInterface {
     public static final String FIELD_SALTEDHASH = "saltedHash";
     private final DBCollection collection;
     private DBCursor currentCursor;
-    
-    public MongoInterfaceAccounts () {
+
+    public MongoInterfaceAccounts() {
         super(NAME_DATABASE);
         this.collection = super.getDataBase().getCollection(NAME_COLLECTION);
     }
-    
+
     public DBCollection getCollection() {
         return collection;
     }
-    
+
     public boolean UserNameExists(String userName) {
         this.currentCursor = super.getCursorFromSingleField(FIELD_USERNAME, userName, this.collection);
         return currentCursor.hasNext();
     }
-    
-    public String getHash (String userName) {
+
+    public String getHash(String userName) {
         this.currentCursor = super.getCursorFromSingleField(FIELD_USERNAME, userName, collection);
-        if ( this.currentCursor.hasNext()) {
+        if (this.currentCursor.hasNext()) {
             return super.getNext(currentCursor).get(FIELD_SALTEDHASH).toString();
-        } 
+        }
         throw new IllegalArgumentException("Username not found");
     }
-    
+
     public Map<String, Object> getUserData(String userName) {
         return super.getCursorFromSingleField(FIELD_USERNAME, userName, collection).next().toMap();
     }
-    
-    public void addNewUserToCollection(String userName, String saltedHash, int userType) throws Exception{
-        if(this.UserNameExists(userName)) {
+
+    public void addNewUserToCollection(String userName, String saltedHash, int userType) throws Exception {
+        if (this.UserNameExists(userName)) {
             throw new IllegalArgumentException("The username exists in database. This should have been caught sooner!");
         }
         Map<String, Object> newUser = new LinkedHashMap<String, Object>();
@@ -62,7 +63,7 @@ public class MongoInterfaceAccounts extends MongoInterface {
     }
 
     public void changeUserType(String userName, int userType) {
-        if(!this.UserNameExists(userName)) {
+        if (!this.UserNameExists(userName)) {
             throw new IllegalArgumentException("The username does not exist in database. This should have been caught sooner!");
         }
         Map<String, Object> query = new HashMap<String, Object>();
@@ -71,9 +72,9 @@ public class MongoInterfaceAccounts extends MongoInterface {
         update.put(FIELD_USERTYPE, userType);
         super.updateEntriesInCollection(query, update, collection);
     }
-    
+
     public void changeHash(String userName, String saltedHash) {
-        if(!this.UserNameExists(userName)) {
+        if (!this.UserNameExists(userName)) {
             throw new IllegalArgumentException("The username does not exist in database. This should have been caught sooner!");
         }
         Map<String, Object> query = new HashMap<String, Object>();
@@ -82,9 +83,9 @@ public class MongoInterfaceAccounts extends MongoInterface {
         update.put(FIELD_SALTEDHASH, saltedHash);
         super.updateEntriesInCollection(query, update, collection);
     }
-    
-    public void removeUser (String userName) {
-        if(!this.UserNameExists(userName)) {
+
+    public void removeUser(String userName) {
+        if (!this.UserNameExists(userName)) {
             throw new IllegalArgumentException("The username does not exist in database. This should have been caught sooner!");
         }
         Map<String, Object> query = new HashMap<String, Object>();
